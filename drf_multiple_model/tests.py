@@ -383,8 +383,8 @@ class TestMMViews(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         self.assertEqual(len(response.data), 2)
-        self.assertIn('The Plays', response.data[0].keys())
-        self.assertIn('The Sonnets', response.data[1].keys())
+        self.assertIn('The Plays', list(response.data[0].keys()))
+        self.assertIn('The Sonnets', list(response.data[1].keys()))
 
     def test_simple_flat(self):
         """
